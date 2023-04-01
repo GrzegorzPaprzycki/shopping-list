@@ -15,7 +15,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  email         String
+  email         String         @unique
   firstName     String
   lastName      String
   password      String
@@ -41,10 +41,12 @@ model ShoppingList {
   @@index([ownerId, id])
 }
 
-enum Item_STATUS {
+enum ITEM_STATUS {
   NOT_BOUGHT
   BOUGHT
   PLACED
+
+  @@map("ITEM_STATUS")
 }
 
 model Item {
@@ -52,7 +54,7 @@ model Item {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  status Item_STATUS @default(NOT_BOUGHT)
+  status ITEM_STATUS @default(NOT_BOUGHT)
   name   String
 
   ownerId        String
@@ -60,8 +62,9 @@ model Item {
   shoppingListId String
   shoppingList   ShoppingList @relation(fields: [shoppingListId], references: [id])
 
-  due     DateTime?
-  deleted Boolean   @default(false)
+  description String?
+  due         DateTime?
+  deleted     Boolean   @default(false)
 
   @@index([ownerId])
 }
