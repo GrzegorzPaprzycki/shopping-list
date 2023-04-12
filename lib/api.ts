@@ -1,3 +1,5 @@
+import { IUser } from "@/components/Authform";
+
 type IParams = {
   url: string;
   method: "POST" | "GET" | "PUT" | "DELETE" | "PATCH";
@@ -25,10 +27,10 @@ const fetcher = async ({ url, method, body, json = true }: IParams) => {
   }
 };
 
-export const register = (user) => {
+export const register = (user: IUser) => {
   return fetcher({ url: "/api/register", method: "POST", body: user });
 };
 
-export const signin = (user) => {
+export const signin = (user: IUser) => {
   return fetcher({ url: "/api/signin", method: "POST", body: user });
 };
