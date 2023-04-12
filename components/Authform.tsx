@@ -1,6 +1,7 @@
 "use client";
 
 import { register, signin } from "@/lib/api";
+import { User } from "@prisma/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, SyntheticEvent, useState } from "react";
@@ -16,12 +17,10 @@ type IContent = {
   buttonText: string;
 };
 
-export type IUser = {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-};
+export type IUserData = Pick<
+  User,
+  "firstName" | "lastName" | "email" | "password"
+>;
 
 type IProps = {
   mode: "register" | "signin";
@@ -43,7 +42,7 @@ const signinContent: IContent = {
   buttonText: "Sign In",
 };
 
-const initialState: IUser = {
+const initialState: IUserData = {
   email: "",
   password: "",
   firstName: "",
@@ -51,7 +50,7 @@ const initialState: IUser = {
 };
 
 const AuthForm = ({ mode }: IProps) => {
-  const [formState, setFormState] = useState<IUser>({
+  const [formState, setFormState] = useState<IUserData>({
     ...initialState,
   });
   const router = useRouter();
