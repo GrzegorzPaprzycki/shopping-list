@@ -157,3 +157,5 @@ const AuthForm = ({ mode }: IProps) => {
     </Card>
   );
 };
+
+export default AuthForm;
