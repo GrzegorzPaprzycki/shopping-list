@@ -1,6 +1,7 @@
 import "@/styles/global.css";
 import { ReactNode } from "react";
 import GlassPane from "@/components/GlassPane";
+import Sidebar from "@/components/Sidebar";
 
 type IProps = {
   children: ReactNode;
@@ -16,7 +17,8 @@ export default function DashboardRootLayout({ children }: IProps) {
         <link rel="icon" href="../favicon.ico" />{" "}
       </head>
       <body className="h-screen w-screen rainbow-mesh p-6">
-        <GlassPane className="w-full h-full flex items-center justify-center">
+        <GlassPane className="w-full h-full flex items-center">
+          <Sidebar />
           {children}{" "}
         </GlassPane>
       </body>

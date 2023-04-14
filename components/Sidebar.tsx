@@ -3,12 +3,12 @@ import SidebarLink from "./SidebarLink";
 
 export type ILink = {
   label: string;
-  icon: "Grid" | "Calendar" | "User" | "Settings";
+  icon: "Home" | "Calendar" | "User" | "Settings";
   link: string;
 };
 
 const links: ILink[] = [
-  { label: "Home", icon: "Grid", link: "/home" },
+  { label: "Home", icon: "Home", link: "/home" },
   {
     label: "Calendar",
     icon: "Calendar",

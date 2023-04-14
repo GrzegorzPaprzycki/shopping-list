@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Settings, User, Grid, Calendar } from "react-feather";
+import { Settings, User, Home, Calendar } from "react-feather";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
 import { ILink } from "./Sidebar";
@@ -10,7 +10,7 @@ type IProps = {
   link: ILink;
 };
 
-const icons = { Settings, User, Grid, Calendar };
+const icons = { Settings, User, Home, Calendar };
 
 const SidebarLink: FC<IProps> = ({ link }) => {
   const pathname = usePathname();
