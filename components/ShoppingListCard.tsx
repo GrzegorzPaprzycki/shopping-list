@@ -21,7 +21,7 @@ const formatDate = (date: Date) =>
 const ShoppingListCard: FC<{ shoppingList: ShoppingListWithItems }> = ({
   shoppingList,
 }) => {
-  const boughtCount = shoppingList.items.map(
+  const boughtCount = shoppingList.items.filter(
     (item) => item.status === ITEM_STATUS.BOUGHT
   ).length;
 
@@ -39,7 +39,7 @@ const ShoppingListCard: FC<{ shoppingList: ShoppingListWithItems }> = ({
       </div>
       <div className="mb-2">
         <span className="text-gray-400">
-          {boughtCount}/{shoppingList.items.length} completed
+          {boughtCount}/{shoppingList.items.length} bought
         </span>
       </div>
       <div>
