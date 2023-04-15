@@ -21,6 +21,7 @@ export default function DashboardRootLayout({ children }: IProps) {
           <Sidebar />
           {children}{" "}
         </GlassPane>
+        <div id="modal"></div>
       </body>
     </html>
   );
