@@ -1,4 +1,4 @@
-import { IUserData } from "@/components/AuthForm";
+import { IUserData } from "@/components/Authform";
 
 type IParams = {
   url: string;
