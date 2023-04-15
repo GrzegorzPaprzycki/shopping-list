@@ -7,7 +7,7 @@ type IParams = {
   json?: boolean;
 };
 
-const fetcher = async ({ url, method, body, json = true }: IParams) => {
+const fetcher = async ({ url, method, body }: IParams) => {
   const res = await fetch(url, {
     method,
     ...(body && { body: JSON.stringify(body) }),
@@ -21,10 +21,8 @@ const fetcher = async ({ url, method, body, json = true }: IParams) => {
     throw new Error("Error on API side");
   }
 
-  if (json) {
-    const data = await res.json();
-    return data.data;
-  }
+  const data = await res.json();
+  return data.data;
 };
 
 export const register = (user: IUserData) => {
@@ -33,4 +31,8 @@ export const register = (user: IUserData) => {
 
 export const signin = (user: IUserData) => {
   return fetcher({ url: "/api/signin", method: "POST", body: user });
+};
+
+export const createNewShoppingList = (name: string) => {
+  return fetcher({ url: "/api/shoppingList", method: "POST", body: { name } });
 };
