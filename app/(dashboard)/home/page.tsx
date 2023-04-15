@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 import { db } from "@/lib/db";
 import ShoppingListCard from "@/components/ShoppingListCard";
 import Link from "next/link";
+import ItemCard from "@/components/ItemCard";
 
 const getData = async () => {
   await delay(2000);
@@ -46,7 +47,9 @@ export default async function Page() {
           <div className="w-1/3 p-3">{/* new list here */}</div>
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
-          <div className="w-full">{/* items here */}</div>
+          <div className="w-full">
+            <ItemCard title="Some items you need to buy:" />
+          </div>
         </div>
       </div>
     </div>

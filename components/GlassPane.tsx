@@ -7,8 +7,7 @@ type IProps = {
 
 const GlassPane: FC<IProps> = ({ children, className }) => {
   return (
-    <div
-      className={`${className} glass rounded-2xl border-solid border-2 border-gray-200`}>
+    <div className={`${className} glass border-solid border-2 border-gray-200`}>
       {children}
     </div>
   );
