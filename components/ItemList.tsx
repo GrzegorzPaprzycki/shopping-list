@@ -39,7 +39,7 @@ const getData = async (listId: string) => {
   return items;
 };
 
-const ItemCard = async ({
+const ItemList = async ({
   items,
   title,
   listId,
@@ -84,4 +84,4 @@ const ItemCard = async ({
   );
 };
 
-export default ItemCard as any;
+export default ItemList as any;

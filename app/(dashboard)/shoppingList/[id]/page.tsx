@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { getUserFromCookie } from "@/lib/auth";
 import { cookies } from "next/headers";
-import ItemCard from "@/components/ItemCard";
+import ItemList from "@/components/ItemList";
 
 type IProps = {
   params: { id: string };
@@ -27,7 +27,7 @@ export default async function ShoppingListPage({ params }: IProps) {
   const shoppingList = await getData(params.id);
   return (
     <div className="h-full overflow-y-auto pr-6 w-full">
-      <ItemCard
+      <ItemList
         items={shoppingList?.items}
         title={shoppingList?.name}
         listId={params.id}
