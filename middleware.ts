@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { validateJWT } from "@/lib/jwt";
+const PUBLIC_FILE = /\.(.*)$/;
 
 export default async function middleware(req: any) {
   const { pathname } = req.nextUrl;
@@ -8,7 +9,8 @@ export default async function middleware(req: any) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/static") ||
     pathname.startsWith("/signin") ||
-    pathname.startsWith("/register")
+    pathname.startsWith("/register") ||
+    PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
   }
