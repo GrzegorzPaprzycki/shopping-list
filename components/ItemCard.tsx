@@ -58,8 +58,7 @@ const ItemCard = async ({ items, title }: IProps) => {
             {data.map((item) => (
               <div className="py-2 " key={item.id}>
                 <div>
-                  {/* <span className="text-gray-800">{item.name}</span> */}
-                  item name
+                  <span className="text-gray-800">{item.name}</span>
                 </div>
                 <div>
                   <span className="text-gray-400 text-sm">

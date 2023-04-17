@@ -35,8 +35,7 @@ const ShoppingListCard: FC<{ shoppingList: ShoppingListWithItems }> = ({
         </span>
       </div>
       <div className="mb-6">
-        {/* <span className="text-3xl text-gray-600">{shoppingList.name}</span> */}
-        ShoppingList name
+        <span className="text-3xl text-gray-600">{shoppingList.name}</span>
       </div>
       <div className="mb-2">
         <span className="text-gray-400">

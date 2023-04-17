@@ -12,7 +12,7 @@ export default async function handler(
 
     await db.shoppingList.create({
       data: {
-        name: req.body.names123,
+        name: req.body.name,
         ownerId: user.id,
       },
     });
