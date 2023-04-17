@@ -1,11 +1,10 @@
 import { getUserFromCookie } from "@/lib/auth";
 import { cookies } from "next/headers";
-import Button from "./Button";
 import Card from "./Card";
 import { delay } from "@/lib/async";
 
 const getData = async () => {
-  await delay(500);
+  await delay(2500);
   const user = await getUserFromCookie(cookies());
   return user;
 };
@@ -23,9 +22,6 @@ const Greetings = async () => {
         <h4 className="text-xl text-gray-400">
           Lets go and start some shopping.
         </h4>
-      </div>
-      <div>
-        <Button size="large">Buy today</Button>
       </div>
     </Card>
   );

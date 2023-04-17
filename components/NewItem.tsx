@@ -10,7 +10,7 @@ Modal.setAppElement("#modal");
 
 const NewItem = () => {
   const router = useRouter();
-  const params = useParams();
+  const params: any = useParams();
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);

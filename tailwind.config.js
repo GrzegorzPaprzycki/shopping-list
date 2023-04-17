@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)"],
       },
+      colors: {
+        "regal-blue": "#243c5a",
+      },
     },
   },
   plugins: [],

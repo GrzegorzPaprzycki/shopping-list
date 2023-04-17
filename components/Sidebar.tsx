@@ -3,16 +3,16 @@ import SidebarLink from "./SidebarLink";
 
 export type ILink = {
   label: string;
-  icon: "Home" | "Calendar" | "User" | "Settings";
+  icon: "Home" | "DollarSign" | "User" | "Settings";
   link: string;
 };
 
 const links: ILink[] = [
   { label: "Home", icon: "Home", link: "/home" },
   {
-    label: "Calendar",
-    icon: "Calendar",
-    link: "/calendar",
+    label: "wallet",
+    icon: "DollarSign",
+    link: "/wallet",
   },
   { label: "Profile", icon: "User", link: "/profile" },
   {
@@ -24,7 +24,7 @@ const links: ILink[] = [
 
 const Sidebar = () => {
   return (
-    <Card className="h-full w-40 flex items-center justify-between flex-wrap">
+    <Card className="h-full w-40 flex flex-col items-center justify-around flex-wrap mr-6">
       {links.map((link) => (
         <SidebarLink link={link} key={link.label} />
       ))}
