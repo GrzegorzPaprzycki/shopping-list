@@ -32,7 +32,7 @@ const buttonClasses = cva(
         text: ["bg-transparent", "text-black", "border-0", "hover:bg-gray-100"],
       },
       size: {
-        small: ["text-md", "py-1", "px-2"],
+        small: ["text-sm", "py-1", "px-2"],
         medium: ["text-lg", "px-6", "py-2"],
         large: ["text-xlg", "px-8", "py-4"],
       },

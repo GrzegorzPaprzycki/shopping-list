@@ -40,3 +40,7 @@ export const createNewShoppingList = (name: string) => {
 export const createNewItem = (name: string, id: string) => {
   return fetcher({ url: "/api/item", method: "POST", body: { name, id } });
 };
+
+export const buyItem = (itemId: string) => {
+  return fetcher({ url: "/api/item", method: "PATCH", body: { itemId } });
+};

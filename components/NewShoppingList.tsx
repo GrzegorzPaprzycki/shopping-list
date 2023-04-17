@@ -38,7 +38,9 @@ const NewShoppingList = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <Button type="submit">Create</Button>
+          <Button className="mx-4" type="submit">
+            Create
+          </Button>
         </form>
       </Modal>
     </div>
