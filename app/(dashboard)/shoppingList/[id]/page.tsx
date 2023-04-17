@@ -27,7 +27,8 @@ export default async function ShoppingListPage({ params }: IProps) {
   const shoppingList = await getData(params.id);
   return (
     <div className="h-full overflow-y-auto pr-6 w-full">
-      <ItemCard tasks={shoppingList?.items} title={shoppingList?.name} />
+      {/* <ItemCard tasks={shoppingList?.items} title={shoppingList?.name} /> */}
+      ItemCard
     </div>
   );
 }
