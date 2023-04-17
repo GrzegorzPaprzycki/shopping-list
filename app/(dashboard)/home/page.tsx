@@ -11,7 +11,7 @@ import ItemCard from "@/components/ItemCard";
 import NewShoppingList from "@/components/NewShoppingList";
 
 const getData = async () => {
-  await delay(2000);
+  await delay(500);
   const user = await getUserFromCookie(cookies());
 
   const shoppingLists = await db.shoppingList.findMany({
@@ -51,7 +51,7 @@ export default async function Page() {
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
           <div className="w-full">
-            <ItemCard title="Some items you need to buy:" />
+            <ItemCard withButton={false} title="Some items you need to buy:" />
           </div>
         </div>
       </div>

@@ -47,8 +47,6 @@ async function main() {
       })
     )
   );
-
-  console.log({ user, items: items });
 }
 main()
   .then(async () => {

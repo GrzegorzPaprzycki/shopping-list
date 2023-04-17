@@ -36,3 +36,7 @@ export const signin = (user: IUserData) => {
 export const createNewShoppingList = (name: string) => {
   return fetcher({ url: "/api/shoppingList", method: "POST", body: { name } });
 };
+
+export const createNewItem = (name: string, id: string) => {
+  return fetcher({ url: "/api/item", method: "POST", body: { name, id } });
+};

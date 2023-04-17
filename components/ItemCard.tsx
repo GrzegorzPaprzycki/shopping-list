@@ -4,10 +4,12 @@ import { Item, ITEM_STATUS } from "@prisma/client";
 import { cookies } from "next/headers";
 import Button from "./Button";
 import Card from "./Card";
+import NewItem from "./NewItem";
 
 type IProps = {
   items?: Item[];
   title: string;
+  withButton: boolean;
 };
 
 const getData = async () => {
@@ -36,9 +38,8 @@ const getData = async () => {
   return items;
 };
 
-const ItemCard = async ({ items, title }: IProps) => {
+const ItemCard = async ({ items, title, withButton = true }: IProps) => {
   const data = items || (await getData());
-  console.log(data);
 
   return (
     <Card>
@@ -46,11 +47,11 @@ const ItemCard = async ({ items, title }: IProps) => {
         <div>
           <span className="text-3xl text-gray-600">{title}</span>
         </div>
-        <div>
-          <Button intent="text" className="text-violet-600">
-            + Create New
-          </Button>
-        </div>
+        {withButton ? (
+          <div>
+            <NewItem />
+          </div>
+        ) : null}
       </div>
       <div>
         {data && data.length ? (
