@@ -2,21 +2,22 @@ import { getUserFromCookie } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { Item, ITEM_STATUS } from "@prisma/client";
 import { cookies } from "next/headers";
-import Button from "./Button";
 import Card from "./Card";
 import NewItem from "./NewItem";
 
 type IProps = {
   items?: Item[];
   title: string;
+  listId: string;
   withButton: boolean;
 };
 
-const getData = async () => {
+const getData = async (listId: string) => {
   const user = await getUserFromCookie(cookies());
   const items = await db.item.findMany({
     where: {
       ownerId: user?.id,
+      shoppingListId: listId,
       NOT: [
         {
           status: ITEM_STATUS.BOUGHT,
@@ -38,8 +39,14 @@ const getData = async () => {
   return items;
 };
 
-const ItemCard = async ({ items, title, withButton = true }: IProps) => {
-  const data = items || (await getData());
+const ItemCard = async ({
+  items,
+  title,
+  listId,
+  withButton = true,
+}: IProps) => {
+  console.log(items);
+  const data = items || (await getData(listId));
 
   return (
     <Card>

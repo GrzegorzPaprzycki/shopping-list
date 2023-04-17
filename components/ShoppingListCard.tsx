@@ -28,7 +28,7 @@ const ShoppingListCard: FC<{ shoppingList: ShoppingListWithItems }> = ({
   const progress = Math.ceil((boughtCount / shoppingList.items.length) * 100);
 
   return (
-    <Card className="!px-6 !py-8 hover:scale-105 transition-all ease-in-out duration-200">
+    <Card className="!px-6 !py-8 hover:bg-violet-100 transition-all ease-in-out duration-200">
       <div>
         <span className="text-sm text-gray-300">
           {formatDate(shoppingList.createdAt)}

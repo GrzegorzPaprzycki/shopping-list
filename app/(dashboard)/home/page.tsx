@@ -39,7 +39,7 @@ export default async function Page() {
         </div>
         <div className="flex flex-2 grow items-center flex-wrap mt-3 -m-3 ">
           {shoppingLists.map((list) => (
-            <div key={list.id} className="w-1/3 p-3">
+            <div key={list.id} className="w-full p-3">
               <Link href={`/shoppingList/${list.id}`}>
                 <ShoppingListCard shoppingList={list} />
               </Link>
@@ -47,11 +47,6 @@ export default async function Page() {
           ))}
           <div className="w-1/3 p-3">
             <NewShoppingList />
-          </div>
-        </div>
-        <div className="mt-6 flex-2 grow w-full flex">
-          <div className="w-full">
-            <ItemCard withButton={false} title="Some items you need to buy:" />
           </div>
         </div>
       </div>

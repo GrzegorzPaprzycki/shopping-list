@@ -26,7 +26,10 @@ const NewItem = () => {
 
   return (
     <div className="px-6 py-8 hover:scale-105 transition-all ease-in-out duration-200 flex justify-center items-center">
-      <Button intent="text" onClick={() => openModal()}>
+      <Button
+        className="text-violet-400"
+        intent="text"
+        onClick={() => openModal()}>
         + Create New Item
       </Button>
 

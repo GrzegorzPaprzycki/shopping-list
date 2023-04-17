@@ -10,7 +10,7 @@ export type ILink = {
 const links: ILink[] = [
   { label: "Home", icon: "Home", link: "/home" },
   {
-    label: "wallet",
+    label: "Wallet",
     icon: "DollarSign",
     link: "/wallet",
   },

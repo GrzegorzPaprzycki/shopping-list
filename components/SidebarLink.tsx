@@ -23,14 +23,16 @@ const SidebarLink: FC<IProps> = ({ link }) => {
   const Icon = icons[link.icon];
 
   return (
-    <Link href={link.link}>
-      <Icon
-        size={40}
-        className={`${
-          isActive ? "stroke-violet-600" : null
-        } stroke-gray-400 hover:stroke-violet-600 transition duration-200 ease-in-out`}
-      />
-    </Link>
+    <div className="hover:stroke-violet-600 hover:text-violet-600 ">
+      <Link href={link.link} className="flex flex-col items-center ">
+        <Icon
+          size={40}
+          className={`${
+            isActive ? "stroke-violet-600" : null
+          } stroke-gray-400 hover:stroke-violet-600 transition duration-200 ease-in-out`}
+        />
+      </Link>
+    </div>
   );
 };
 
