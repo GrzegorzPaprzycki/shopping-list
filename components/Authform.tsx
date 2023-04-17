@@ -145,7 +145,7 @@ const AuthForm = ({ mode }: IProps) => {
                 </Link>
               </span>
             </div>
-            <div>
+            <div className="ml-4">
               <Button type="submit" intent="secondary">
                 {content.buttonText}
               </Button>

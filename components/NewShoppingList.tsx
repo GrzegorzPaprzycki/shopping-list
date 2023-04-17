@@ -34,7 +34,7 @@ const NewShoppingList = () => {
         <h1 className="text-3xl mb-6">New Shopping List</h1>
         <form className="flex items-center" onSubmit={handleSubmit}>
           <Input
-            placeholder="project name"
+            placeholder="list name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
