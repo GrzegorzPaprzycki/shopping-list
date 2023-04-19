@@ -1,7 +1,6 @@
 import Greetings from "@/components/Greetings";
 import GreetingsSkeleton from "@/components/GreetingsSkeleton";
 import { getUserFromCookie } from "@/lib/auth";
-import { delay } from "@/lib/async";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import { db } from "@/lib/db";
@@ -10,7 +9,6 @@ import Link from "next/link";
 import NewShoppingList from "@/components/NewShoppingList";
 
 const getData = async () => {
-  await delay(500);
   const user = await getUserFromCookie(cookies());
 
   const shoppingLists = await db.shoppingList.findMany({
