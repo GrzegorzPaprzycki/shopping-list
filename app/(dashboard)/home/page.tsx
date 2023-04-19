@@ -7,7 +7,6 @@ import { cookies } from "next/headers";
 import { db } from "@/lib/db";
 import ShoppingListCard from "@/components/ShoppingListCard";
 import Link from "next/link";
-import ItemList from "@/components/ItemList";
 import NewShoppingList from "@/components/NewShoppingList";
 
 const getData = async () => {

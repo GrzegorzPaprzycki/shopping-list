@@ -1,4 +1,3 @@
-import { User } from "@prisma/client";
 import bcrypt from "bcrypt";
 import { db } from "./db";
 import { validateJWT } from "./jwt";

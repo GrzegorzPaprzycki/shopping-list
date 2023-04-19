@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders a heading 1`] = `
+<div>
+  <div
+    class="undefined px-10 py-4 drop-shadow-xl bg-white"
+  >
+    Test content
+  </div>
+</div>
+`;
+
+exports[`Card renders without errors 1`] = `
+<div>
+  <div
+    class="undefined px-10 py-4 drop-shadow-xl bg-white"
+  >
+    Test content
+  </div>
+</div>
+`;
